@@ -1,6 +1,4 @@
-fr(vec.size()){
-    //     if(vec[i]==n){
-    //         index=i;
-    //         break;
-    //     }
-    // }
+else
+        {
+            q.push(Choice(trainCost[to],to,1));
+        }
