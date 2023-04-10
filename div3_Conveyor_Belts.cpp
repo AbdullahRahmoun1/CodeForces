@@ -36,13 +36,26 @@ using namespace std;
 */
 //freopen("input.in","r",stdin);
 //freopen("input.out","r",stdout);
+ll n;
+ll layer(pair<ll,ll> point){
+    if(point.first+point.second<=n+1){
+        return min(point.first,point.second);
+    }else {
+        ll temp=max(point.first,point.second);
+        return n+1-temp;
+    }
+}
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
     int t;inp(t);
+    
+    pair<ll,ll>start,end;
     while(t--){
-        
+        cin>>n>>start.first>>start.second>>end.first>>end.second;
+        ll first=layer(start),second=layer(end);
+        prnt(abs(first-second));
     }
     
     }

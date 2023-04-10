@@ -42,7 +42,19 @@ int main(){
     cout.tie(0);
     int t;inp(t);
     while(t--){
-        
+        int n;inp(n);
+        int k;inp(k);
+        string s;inp(s);
+        int j=s.size();
+        fr(s.size()){
+            int digit=s.at(i)-'0';
+            if(digit<k){
+                j=i;
+                break;
+            }
+        }
+        s.insert(j,to_string(k));
+        prnt(s);
     }
     
     }

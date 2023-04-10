@@ -1,4 +1,6 @@
-else
-        {
-            q.push(Choice(trainCost[to],to,1));
-        }
+ // frr(1,n){
+    //     jfr(edges[i].size()){
+    //         prts(edges[i][j]);
+    //     }
+    //     prnt("\n........");
+    // }

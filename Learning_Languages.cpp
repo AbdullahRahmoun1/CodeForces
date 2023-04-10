@@ -36,13 +36,45 @@ using namespace std;
 */
 //freopen("input.in","r",stdin);
 //freopen("input.out","r",stdout);
+vector<int>edges[101];
+vector<int>langs[101];
+bool visited [101];
+void dfs(int node){
+    visited[node]=true;
+    fr(edges[node].size()){
+        int nextNode=edges[node][i];
+        if(!visited[nextNode])
+        dfs(nextNode);
+    }
+
+}
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    int t;inp(t);
-    while(t--){
-        
+    int n,m,ctr=0;
+    cin>>n>>m;
+    bool hasLang=false;
+    jfrr(1,n){
+        int k;inp(k);
+        if(k>0){
+            hasLang=true;
+        }
+        while(k--){
+            int lang;inp(lang);
+            vector <int>array=langs[lang];
+            fr(array.size()){
+                edges[array[i]].push_back(j);
+                edges[j].push_back(array[i]);
+            }
+            langs[lang].push_back(j);
+        }
     }
-    
+    frr(1,n){
+        if(!visited[i]){
+            ctr++;
+            dfs(i);
+        }
+    }
+    prnt((hasLang?ctr-1:ctr));
     }
